@@ -9,8 +9,9 @@ gunicorn==21.2.0
 packaging==23.1
 psycopg2==2.9.8
 pytz==2023.3.post1
-soupsieve==2.5
+soupsieve
 sqlparse==0.4.4
 typing_extensions==4.8.0
 tzdata==2023.3
 whitenoise==6.5.0
+Pillow
