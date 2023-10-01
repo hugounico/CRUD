@@ -17,8 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from core import views as core_views 
+from laboratorio import views as laboratorio_views 
 
 urlpatterns = [
     path('', core_views.home, name='home'),
+    path('laboratorios/', laboratorio_views.read_labs, name='read_labs'),
     path('admin/', admin.site.urls),
 ]
