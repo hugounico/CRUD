@@ -6,30 +6,26 @@
 <table class="table">
     <thead class="table-info">
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Ciudad</th>
+        <th scope="col">Pais</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
       </tr>
     </thead>
     <tbody>
+    {% for laboratorio in laboratorios %}
       <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+        <th scope="row">{{laboratorio.nombre}}</th>
+        <td>{{laboratorio.ciudad}}</td>
+        <td>{{laboratorio.pais}}</td>
+        <td><a href="/update_labs/{{laboratorio.pk}}">Actualizar</a></td>
+        <td><a href="/delete_labs/{{laboratorio.pk}}">Eliminar</a></td>
       </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
+    {% endfor %}
     </tbody>
   </table>
+  <br>
+  <div class="alert alert-danger" role="alert">¿Desea agregar un Laboratorio?</div>
+    <p><a href="{% url 'create_labs' %}"><-- Ir a la creación de laboratorios</a></p>
   {% endblock content %}

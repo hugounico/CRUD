@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+
+{% block title %} Crear Laboratorios {% endblock title %}
+
+{% block content %}
+
+<form method="POST">
+    {% csrf_token %}
+    <legend style="text-align:center">Ingresar los Datos del Laboratorio</legend>
+    <div class="mb-3">
+      <label for="lab_nombre" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="lab_nombre" placeholder="Nombre" name="lab_nombre">
+    </div>
+    <div class="mb-3">
+      <label for="lab_ciudad" class="form-label">Ciudad</label>
+      <input type="text" class="form-control" id="lab_ciudad" placeholder="Ciudad" name="lab_ciudad">
+    </div>
+    <div class="mb-3">
+        <label for="lab_pais" class="form-label">Pais</label>
+        <input type="text" class="form-control" id="lab_pais" placeholder="Pais" name="lab_pais">
+      </div>
+    <button type="submit" class="btn btn-primary">Registrar</button>
+  </form>
+
+{% endblock content %}

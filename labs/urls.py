@@ -17,10 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from core import views as core_views 
-from laboratorio import views as laboratorio_views 
+from laboratorio import views as laboratorio_views
+from laboratorio.views import insertar_laboratorio, editar_laboratorio, eliminar_laboratorio 
 
 urlpatterns = [
     path('', core_views.home, name='home'),
-    path('laboratorios/', laboratorio_views.read_labs, name='read_labs'),
+    path('read_labs/', laboratorio_views.read_labs, name='read_labs'),
+    path('create_labs/', insertar_laboratorio, name='create_labs'),
+    path('update_labs/<int:laboratorio_id>/', editar_laboratorio, name='update_labs'),
+    path('delete_labs/<int:laboratorio_id>/', eliminar_laboratorio, name='delete_labs'),
     path('admin/', admin.site.urls),
 ]
