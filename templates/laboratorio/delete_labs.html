@@ -10,6 +10,6 @@
         {% csrf_token %}
         <input type="submit" value="Confirmar">
     </form>
-    <a href="/read_labs/">Cancelar</a>
+    <a href="{% url 'read_labs' %}">Cancelar</a>
 
 {% endblock content %}
