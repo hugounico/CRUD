@@ -1,8 +1,27 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 101vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+}
+
+/* Cambiar el color del botón del menú desplegable */
+.navbar-toggler-icon {
+    background-color: red; /* Cambia el color */
+}
+.navbar-toggler-icon {
+    background-color: black; /* Cambia el color */
+}
+
 /* NAVBAR */
 .navbar a{
     color: grey;
 }
-
 
 /* FORMULARIOS */
 .forms {
@@ -10,10 +29,6 @@
     margin-bottom: 1%;
     padding: 1%;
 }
-
-
-
-
 
 /* FOOTER */
 .footer {                                       /*color de fondo, letras y centrado de items*/
