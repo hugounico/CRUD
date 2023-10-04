@@ -3,7 +3,8 @@
 {% block title %} Laboratorios {% endblock title %}
 
 {% block content %}
-<table class="table">
+<div class="container forms bg-light">
+  <table class="table">
     <thead class="table-info">
       <tr>
         <th scope="col">Nombre</th>
@@ -21,11 +22,12 @@
         <td>{{laboratorio.pais}}</td>
         <td><a href="/update_labs/{{laboratorio.pk}}">Actualizar</a></td>
         <td><a href="/delete_labs/{{laboratorio.pk}}">Eliminar</a></td>
-      </tr>
+       </tr>
     {% endfor %}
     </tbody>
   </table>
-  <br>
-  <div class="alert alert-danger" role="alert">¿Desea agregar un Laboratorio?</div>
-    <p><a href="{% url 'create_labs' %}"><-- Ir a la creación de laboratorios</a></p>
-  {% endblock content %}
+</div>
+<br>
+<div class="container forms bg-light" role="alert">¿Desea agregar un Laboratorio?</div>
+  <p><a href="{% url 'create_labs' %}"><-- Ir a la creación de laboratorios</a></p>
+{% endblock content %}

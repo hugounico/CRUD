@@ -6,15 +6,20 @@
 
 {% load crispy_forms_tags %}
 
-<h3>Registro</h3>
+<div class="container forms bg-light">
+    <div class="col-xxl-1"></div>
+    <div class="col-xxl-10">
+        
+        <h3>Registro</h3><br>
 
-<br>
+        <form action="" method="post">
+            {% csrf_token %}
 
-<form action="" method="post">
-    {% csrf_token %}
-
-    {{ form | crispy }}
-    <button type="submit">Registrar</button>
-</form>
+            {{ form | crispy }}
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
+    <div class="col-xxl-1"></div>
+</div>
 
 {% endblock content %}
