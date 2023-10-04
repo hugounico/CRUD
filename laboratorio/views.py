@@ -1,11 +1,14 @@
 from django.shortcuts import render, redirect
 from .models import Laboratorio
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def read_labs(request):     
     laboratorios = Laboratorio.objects.all()                             
     return render(request, 'laboratorio/read_labs.html', {'laboratorios': laboratorios})
 
+# Crear Lab
+@login_required
 def insertar_laboratorio(request):
     if request.method == 'POST':
         lab_nombre = request.POST['lab_nombre']
@@ -17,7 +20,9 @@ def insertar_laboratorio(request):
         return redirect('/read_labs/')
     else:
         return render(request, 'laboratorio/create_labs.html')
-    
+
+# Editar Lab
+@login_required    
 def editar_laboratorio(request, laboratorio_id):
     laboratorio = Laboratorio.objects.get(pk=laboratorio_id)
 
@@ -36,6 +41,7 @@ def editar_laboratorio(request, laboratorio_id):
         return render(request, 'laboratorio/update_labs.html', {'laboratorio': laboratorio})
     
 # Eliminar Lab
+@login_required
 def eliminar_laboratorio(request, laboratorio_id):
     laboratorio = Laboratorio.objects.get(pk=laboratorio_id)
 
