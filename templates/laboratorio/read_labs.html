@@ -20,8 +20,8 @@
         <th scope="row">{{laboratorio.nombre}}</th>
         <td>{{laboratorio.ciudad}}</td>
         <td>{{laboratorio.pais}}</td>
-        <td><a href="/update_labs/{{laboratorio.pk}}">Actualizar</a></td>
-        <td><a href="/delete_labs/{{laboratorio.pk}}">Eliminar</a></td>
+        <td><a href="/update_labs/{{laboratorio.pk}}"><button>Actualizar</button></a></td>
+        <td><a href="/delete_labs/{{laboratorio.pk}}"><button>Eliminar</button></a></td>
        </tr>
     {% endfor %}
     </tbody>
@@ -29,5 +29,5 @@
 </div>
 <br>
 <div class="container forms bg-light" role="alert">¿Desea agregar un Laboratorio?</div>
-  <p><a href="{% url 'create_labs' %}"><-- Ir a la creación de laboratorios</a></p>
+<div class="container forms bg-light"><a href="{% url 'create_labs' %}"><-- Ir a la creación de laboratorios</a></div>
 {% endblock content %}
